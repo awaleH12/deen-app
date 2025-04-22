@@ -1,30 +1,52 @@
-
-   {% load static %}
-   <!--=============== HEADER ===============-->
-   <header class="header">
-      <nav class="nav container">
-         <div class="nav__data">
-            <a href="{% url 'deen_app:home' %}" class="nav__logo logo_text">
-               DEEN APP
-            </a>
-            <div class="nav__toggle" id="nav-toggle">
-               <i class="ri-menu-line nav__burger" id="nav_burger"></i>
-               <i class="ri-close-line nav__close" id="nav_close"></i>
-            </div>
+{% load static %}
+<!--=============== HEADER ===============-->
+<header class="header">
+   <nav class="nav container">
+      <div class="nav__data">
+         <a href="{% url 'deen_app:home' %}" class="nav__logo logo_text" aria-label="Deen App Home">
+            DEEN APP
+         </a>
+         <div class="nav__toggle" id="nav-toggle">
+            <i class="ri-menu-line nav__burger" id="nav_burger" aria-label="Open Menu"></i>
+            <i class="ri-close-line nav__close" id="nav_close" aria-label="Close Menu"></i>
          </div>
-         <!--=============== NAV MENU ===============-->
-         <div class="nav__menu" id="nav-menu">
-            <ul class="nav__list">
-               <li><a href="{% url 'deen_app:home' %}" class="nav__link">HOME</a></li>
-               <li><a href="{% url 'deen_app:home' %}" class="nav__link">DEEMAHA</a></li>
-               <li><a href="#" class="nav__link">FAQ</a></li>
-               <li><a href="{% url 'deen_app:dashboard' %}" class="login_btn" id="login-id">LOG-IN</a></li>
-            </ul>
-         </div>
-      </nav>
-   </header>
+      </div>
+      <!--=============== NAV MENU ===============-->
+      <div class="nav__menu" id="nav-menu">
+         <ul class="nav__list">
+            <li><a href="{% url 'deen_app:home' %}" class="nav__link" aria-label="Home">HOME</a></li>
+            <li><a href="{% url 'deen_app:home' %}" class="nav__link" aria-label="Deemaha">DEEMAHA</a></li>
+            <li><a href="#" class="nav__link" aria-label="FAQ">FAQ</a></li>
+            <li><a href="{% url 'deen_app:dashboard' %}" class="login_btn" id="login-id" aria-label="Log In">LOG-IN</a></li>
+         </ul>
+      </div>
+      <!--=============== ICONS ===============-->
+      <div class="nav__icons">
+         <button class="nav__icon" id="dark-mode-toggle" aria-label="Toggle Dark Mode">
+            <i class="ri-moon-line" id="dark-mode-icon"></i>
+         </button>
+         <button class="nav__icon" aria-label="Notifications">
+            <i class="ri-notification-line"></i>
+         </button>
+      </div>
+   </nav>
+</header>
 
-   <!--=============== MAIN JS ===============-->
-   <!-- navbar js -->
-   <script src="{% static 'js/nav.js' %}"></script>
-   <script src="{% static 'js/index.js' %}"></script>
+<!--=============== MAIN JS ===============-->
+<script src="{% static 'js/nav.js' %}"></script>
+<script src="{% static 'js/index.js' %}"></script>
+<script>
+   // Dark Mode Toggle
+   const darkModeToggle = document.getElementById('dark-mode-toggle');
+   const darkModeIcon = document.getElementById('dark-mode-icon');
+   const htmlElement = document.documentElement;
+
+   darkModeToggle.addEventListener('click', () => {
+      htmlElement.classList.toggle('dark-mode');
+      if (htmlElement.classList.contains('dark-mode')) {
+         darkModeIcon.classList.replace('ri-moon-line', 'ri-sun-line');
+      } else {
+         darkModeIcon.classList.replace('ri-sun-line', 'ri-moon-line');
+      }
+   });
+</script>
