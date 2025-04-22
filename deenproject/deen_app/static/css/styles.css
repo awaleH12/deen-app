@@ -9,6 +9,7 @@
   --primary-color: #3E0E27;
   --bg-white:#fff;
   --stats-sect-bg:#37E7FF;
+  --sub-hero-bg:#fff;
   --placeholder-text:#d3d3d3;
   --body-text-primary:#31282D;
   --secondary-color: #3B657D;
@@ -29,7 +30,105 @@ body{
  
 }
 
+/* Dark Mode Styles */
+:root.dark-mode {
+  --body-bg-color: #121212;
+  --primary-color: #bb86fc;
+  --bg-white: #1e1e1e;
+  --sub-hero-bg:#2a2a2a;
+  --stats-sect-bg: #1f1f1f;
+  --placeholder-text: #a1a1a1;
+  --body-text-primary: #e0e0e0;
+  --secondary-color: #03dac6;
+  --coptright-color: #1a1a1a;
+  --tertiary-color: #03dac6;
+  --table-alt-color: #2a2a2a;
+  --alt-bg-color: #333333;
+  --hero-border-color: #bb86fc;
+  --bottom-border-color: #444444;
+  --stats-border-line: #03dac6;
+  --ancent-color: #1e1e1e; /* Add this line for dark mode */
+  --table-bg-color: #1e1e1e; /* Background color for the table */
+  --table-text-color: #e0e0e0; /* Text color for the table */
+  --table-border-color: #444444; /* Border color for the table */
+  --table-hover-bg-color: #333333; /* Background color for hovered rows */
+}
 
+body.dark-mode {
+  background-color: var(--body-bg-color);
+  color: var(--body-text-primary);
+}
+
+.hero.dark-mode h1,
+.hero.dark-mode p {
+  color: var(--body-text-primary);
+}
+
+.create_acc_btn.dark-mode {
+  background-color: var(--secondary-color);
+  color: var(--body-bg-color);
+}
+
+.create_acc_btn.dark-mode:hover {
+  background-color: var(--primary-color);
+}
+
+.search_input.dark-mode {
+  background-color: var(--bg-white);
+  color: var(--body-text-primary);
+}
+
+.search_btn.dark-mode {
+  background-color: var(--secondary-color);
+  color: var(--body-bg-color);
+}
+
+.table_section.dark-mode {
+  background-color: var(--table-bg-color);
+  color: var(--table-text-color);
+}
+
+.table_section.dark-mode .table {
+  background-color: var(--table-bg-color);
+  color: var(--table-text-color);
+  border: 1px solid var(--table-border-color);
+}
+
+.table_section.dark-mode .table th,
+.table_section.dark-mode .table td {
+  border: 1px solid var(--table-border-color);
+}
+
+.table_section.dark-mode .table-hover tbody tr:hover {
+  background-color: var(--table-hover-bg-color);
+}
+
+.table_section.dark-mode .thead th {
+  background-color: var(--table-bg-color);
+  color: var(--table-text-color);
+  border-bottom: 2px solid var(--table-border-color);
+}
+
+.table_section.dark-mode .tr {
+  border-bottom: 1px solid var(--table-border-color);
+}
+
+.faq_section.dark-mode {
+  background-color: var(--bg-white);
+}
+
+.accordion-button.dark-mode {
+  background-color: var(--alt-bg-color);
+  color: var(--primary-color);
+}
+
+.page-footer.dark-mode {
+  background-color: var(--coptright-color);
+}
+
+.footer_links a.dark-mode {
+  color: var(--secondary-color);
+}
 
 .literata-heading {
   font-family: "Literata", serif;
@@ -45,6 +144,7 @@ body{
   font-style: normal;
 }
 .section1 {
+  
   margin-top: 11rem;
   margin-bottom: 3rem;
 }
@@ -52,6 +152,35 @@ body{
   margin-top: 5rem;
   margin-bottom: 3rem;
 }
+
+/* Light Mode Section Styling */
+.section {
+  padding: 2rem 0;
+  background-color: var(--bg-white);
+}
+
+.section:nth-child(even) {
+  background-color: var(--table-alt-color); /* Alternate background color */
+}
+
+/* Dark Mode Section Styling */
+:root.dark-mode .section {
+  background-color: #1e1e1e;
+}
+
+:root.dark-mode .section:nth-child(even) {
+  background-color: #2a2a2a; /* Slightly lighter background for alternating sections */
+}
+
+/* Add subtle shadow for separation */
+.section {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+:root.dark-mode .section {
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
 .hero{
   display: flex;
   justify-content: center;
@@ -69,6 +198,7 @@ body{
   font-size: 32px;
   font-style: normal;
   color: var(--primary-color);
+  text-align: center;
 }
 .hero p{
   font-family: "Literata", serif;
@@ -83,7 +213,7 @@ body{
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  background-color: var(--bg-white);
+  background-color: var(--sub-hero-bg);
   box-shadow: 0 4px 4px hsla(0, 0%, 0%, 0.252);
 
 }

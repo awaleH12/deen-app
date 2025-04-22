@@ -36,6 +36,19 @@
   --z-fixed: 100;
 }
 
+:root.dark-mode {
+  --navbar-bg-color: hsl(220, 24%, 12%);
+  --primary-color: #FDF4F4;
+  --white-color: #fff;
+  --font-color: #FDF4F4;
+  --bottom-border-color: hsl(220, 24%, 20%);
+}
+
+body.dark-mode {
+  background-color: var(--navbar-bg-color);
+  color: var(--font-color);
+}
+
 /*========== Responsive typography ==========*/
 
 
@@ -120,21 +133,20 @@ a {
 }
 /* Navigation for mobile devices */
 @media screen and (max-width:1118px) {
-  .nav__menu{
+  .nav__menu {
     position: absolute;
-    left: 0;
-    top:2.5rem;
-    width:100%;
-    
+    left: -100%; /* Initially hidden */
+    top: 3.5rem;
+    width: 100%;
     height: calc(100vh - 3.5rem);
-    overflow: auto;
-    pointer-events: none;
-    opacity: 0;
-    transition: top .4s opacity .3s;
+    background-color: var(--primary-color);
+    transition: left 0.4s ease-in-out;
   }
-  .nav__menu::-webkit-scrollbar{
-    width: 0;
+
+  .show-menu .nav__menu {
+    left: 0; /* Slide in from the left */
   }
+
   .nav__list{
     background-color: var(--primary-color);
     /* padding-top: 1rem; */
@@ -207,12 +219,21 @@ a {
 }
 .login_btn:hover{
   background-color: var(--black-color-light);
+  color: var(--white-color);
+  transform: scale(1.05);
 }
 
 .nav__link:hover {
   background-color: var(--black-color-light);
+  color: var(--white-color);
+  transform: scale(1.05); /* Slight zoom effect */
 }
 
+.nav__link:focus,
+.login_btn:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
 
 /* Show menu */
 .show-menu{
@@ -232,6 +253,80 @@ a {
   opacity: 1;
   transform: rotate(90deg);
 }
+
+.nav__dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--navbar-bg-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.nav__dropdown-item {
+  padding: 0.75rem 1rem;
+  color: var(--font-color);
+  text-decoration: none;
+}
+
+.nav__dropdown-item:hover {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+.nav__link:hover .nav__dropdown {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Dark Mode Toggle and Notification Icon */
+.nav__icons {
+  display: flex;
+  align-items: center; /* Vertically align icons */
+  gap: 1rem; /* Add spacing between icons */
+}
+
+.nav__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 1.5rem; /* Adjust icon size */
+  cursor: pointer;
+  transition: color 0.3s ease;
+  height: var(--header-height); /* Match the height of the navbar */
+  padding: 0 0.5rem; /* Add horizontal padding for better alignment */
+}
+
+.nav__icon:hover {
+  color: var(--tertiary-color); /* Add hover effect */
+}
+
+/* Ensure the login button aligns with the icons */
+.login_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--tertiary-color);
+  color: var(--body-color);
+  padding: 0.5rem 1.5rem;
+  font-family: var(--menu-font-family);
+  font-weight: var(--font-regular);
+  font-size: 1rem;
+  border-radius: 47px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.login_btn:hover {
+  background-color: var(--primary-color);
+  color: var(--body-color);
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 

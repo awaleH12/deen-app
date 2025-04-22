@@ -15,3 +15,17 @@ const showMenu = (toggleId, navId) =>{
 
 showMenu('nav-toggle','nav-menu')
 
+/*=============== DARK MODE TOGGLE ===============*/
+const darkModeToggle = document.getElementById('dark-mode-toggle');
+const darkModeIcon = document.getElementById('dark-mode-icon');
+const htmlElement = document.documentElement;
+
+darkModeToggle.addEventListener('click', () => {
+  htmlElement.classList.toggle('dark-mode');
+  if (htmlElement.classList.contains('dark-mode')) {
+    darkModeIcon.classList.replace('ri-moon-line', 'ri-sun-line');
+  } else {
+    darkModeIcon.classList.replace('ri-sun-line', 'ri-moon-line');
+  }
+});
+
