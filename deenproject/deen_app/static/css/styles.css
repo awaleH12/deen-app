@@ -8,6 +8,7 @@
   --body-bg-color: #FDF4F4;
   --primary-color: #3E0E27;
   --bg-white:#fff;
+  --search_input-bg:#fff;
   --stats-sect-bg:#37E7FF;
   --sub-hero-bg:#fff;
   --placeholder-text:#d3d3d3;
@@ -35,6 +36,7 @@ body{
   --body-bg-color: #121212;
   --primary-color: #bb86fc;
   --bg-white: #1e1e1e;
+  --search_input-bg:#2a2a2a;
   --sub-hero-bg:#2a2a2a;
   --stats-sect-bg: #1f1f1f;
   --placeholder-text: #a1a1a1;
@@ -74,7 +76,7 @@ body.dark-mode {
 }
 
 .search_input.dark-mode {
-  background-color: var(--bg-white);
+  background-color: var(--search_input-bg);
   color: var(--body-text-primary);
 }
 
@@ -281,7 +283,7 @@ body.dark-mode {
   color: var(--body-bg-color);
 }
 .search_input{
-  background-color: var(--bg-white);
+  background-color: var(--search_input-bg);
   
   color: var(--body-text-primary);
   font-family: "Literata", serif;
