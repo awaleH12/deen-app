@@ -6,28 +6,32 @@
          <a href="{% url 'deen_app:home' %}" class="nav__logo logo_text" aria-label="Deen App Home">
             DEEN APP
          </a>
-         <div class="nav__toggle" id="nav-toggle">
-            <i class="ri-menu-line nav__burger" id="nav_burger" aria-label="Open Menu"></i>
-            <i class="ri-close-line nav__close" id="nav_close" aria-label="Close Menu"></i>
+         <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+               <li><a href="{% url 'deen_app:home' %}" class="nav__link" aria-label="Home">HOME</a></li>
+               <li><a href="{% url 'deen_app:home' %}" class="nav__link" aria-label="Deemaha">DEEMAHA</a></li>
+               <li><a href="#" class="nav__link" aria-label="FAQ">FAQ</a></li>
+              
+            </ul>
          </div>
+        
       </div>
       <!--=============== NAV MENU ===============-->
-      <div class="nav__menu" id="nav-menu">
-         <ul class="nav__list">
-            <li><a href="{% url 'deen_app:home' %}" class="nav__link" aria-label="Home">HOME</a></li>
-            <li><a href="{% url 'deen_app:home' %}" class="nav__link" aria-label="Deemaha">DEEMAHA</a></li>
-            <li><a href="#" class="nav__link" aria-label="FAQ">FAQ</a></li>
-            <li><a href="{% url 'deen_app:dashboard' %}" class="login_btn" id="login-id" aria-label="Log In">LOG-IN</a></li>
-         </ul>
-      </div>
+     
       <!--=============== ICONS ===============-->
       <div class="nav__icons">
+         <a href="{% url 'deen_app:dashboard' %}" class="join_us_btn" id="login-id" aria-label="Log In">JOIN US</a>
+         <a href="{% url 'deen_app:dashboard' %}" class="login_bt" id="login-id" aria-label="Log In">LOG-IN</a>
          <button class="nav__icon" id="dark-mode-toggle" aria-label="Toggle Dark Mode">
             <i class="ri-moon-line" id="dark-mode-icon"></i>
          </button>
          <button class="nav__icon" aria-label="Notifications">
             <i class="ri-notification-line"></i>
          </button>
+         <div class="nav__toggle" id="nav-toggle">
+            <i class="ri-menu-line nav__burger" id="nav_burger" aria-label="Open Menu"></i>
+            <i class="ri-close-line nav__close" id="nav_close" aria-label="Close Menu"></i>
+         </div>
       </div>
    </nav>
 </header>

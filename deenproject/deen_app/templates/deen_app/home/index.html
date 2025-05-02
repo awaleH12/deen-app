@@ -1,6 +1,8 @@
 {% extends "deen_app/layouts/base.html" %}
 {% load static %}
-
+{% block title %}
+Deen App - Home
+{% endblock %}
 {% block content %}
 
 <section class="section1 hero dark-mode container">
@@ -14,7 +16,7 @@
         <p>
           App-kaan waxa uu kuu sahlayaa in aad ku kaydsato daymahaan si loo raadiyo kuwa kaa maqan loona bixiyo kuwa kugu maqan.
         </p>
-        <button type="button" class="btn create_acc_btn dark-mode">CREATE ACCOUNT</button>
+        <button type="button" class="btn create_acc_btn dark-mode" aria-label="Create an account">CREATE ACCOUNT</button>
       </div>
     </div>
   </div>
@@ -25,7 +27,8 @@
     <div class=" search_main_cont container">
       <div class="search_cont container">
         <form action="#" class="form_input">
-          <input class="search_input" type="text" placeholder="Halkaan ka raadi magac, naanaysta ama number gaaban" aria-label="search here"  id="search_field">
+          <label for="search_field" class="visually-hidden">Search</label>
+<input class="search_input" type="text" placeholder="Halkaan ka raadi magac, naanaysta ama number gaaban" aria-label="Search here" id="search_field">
           <input class="btn search_btn" type="submit" value="SEARCH HERE" id="search_btn">
         </form>
         
@@ -38,17 +41,17 @@
   <div class="deemaha_main_cont container">
 
  
-    <div class="filter_section">
+    <aside class="filter_section">
       <div class="filter_title_sect">
-        <h1>Filters</h1>
+        <p class="filters_title">Filters</p>
         <hr>
       </div>
       <!-- contries section -->
        <div class="country_city">
           <label for="country" class="country">Country</label>
-          <input type="text" id="country" class="form-control" placeholder="Search by Country" aria-describedby="countrysection">
+          <input type="text" id="country" class="form-control" placeholder="Search by Country">
           <label for="city" class="form-label">City</label>
-          <input type="text" id="city" class="form-control" placeholder="Search by City"  aria-describedby="citysection">
+          <input type="text" id="city" class="form-control" placeholder="Search by City">
           <hr>
        </div> 
        <div class="range_cont">
@@ -59,7 +62,7 @@
           <hr>
        </div>
        <div class="search_by_filter">
-          <h1>Search By:</h1>
+          <p class="filter_seach_area">Search By:</p>
           <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="search_by_ka_maqan">
             <label class="form-check-label" for="fsearch_by_ka_maqan">
@@ -94,30 +97,30 @@
        </div>
        
       
-    </div>
+    </aside>
     <div class="main_content_cont">
       <div class="ad_section">
         <div class="ads_info">
-          <div class="ads_title"><h1>Deen App</h1></div>
+            <div class="ads_title"><span class="ads_text">Deen App</span></div>
           <div class="ads_description"><p>Your Advertising Partner</p></div>
           <div class="ads_btn"><button type="button" class="btn" id="ads_call_btn">ADVERTISE HERE</button></div>
           
         </div>
         <div class="ads_image">
-            <img src="{% static 'img/ads_img.jpg' %}" alt="ads_image">
+            <img src="{% static 'img/ads_img.jpg' %}" alt="Advertisement image for Deen App">
         </div>
       </div>
      
       <div class="stats_section">
         <div class="stats_title">
-          <h1>WEBSITE</h1>
-          <h3>STATICS</h3>
+          <p>WEBSITE</p>
+          <p>STATICS</p>
         </div>
         <div class="stats_data">
           <div class="users_data">
             <p>TOTAL USERS</p>
            <div class="icon_text_bottom">
-            <i class="ri-group-line"></i>
+            <i class="ri-group-line" aria-hidden="true"></i>
             $1,250,771 
            </div>
           </div>
@@ -151,8 +154,8 @@
               </div>
             </div>
             <div class="pay_donate_btn" id="pay_donate_btn">
-              <button type="button" class="btn pay" id="pay_dayn">Pay Dayn</button>
-              <button type="button" class="btn donate" id="donate">Donate</button>
+              <button type="button" class="btn pay" id="pay_dayn" aria-label="Pay your debt">Pay Dayn</button>
+              <button type="button" class="btn donate" id="donate" aria-label="Donate to support">Donate</button>
             </div>
           </div>
           <table class="table table-responsive table-striped table-hover">
@@ -237,13 +240,13 @@
 </section>
 <section class="faq_section">
   <div class="faq container">
-    <h1>FAQ</h1>
+    <h2>FAQ</h2>
     <div class="accordion accordion-flush" id="accordionFlushExample">
       <div class="accordion-item">
         <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-            Qof Kasta ma isticmaali karaa Deen App? #1
-          </button>
+  Qof Kasta ma isticmaali karaa Deen App? #1
+</button>
         </h2>
         <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
           <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
@@ -272,6 +275,7 @@
     </div>
   </div>
 </section>
+
 {% endblock %}
 
 <!-- index.js -->
